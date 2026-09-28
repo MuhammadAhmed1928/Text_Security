@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureText - Web-Based Text Encryption Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="badge">Information Security • Assignment 2</div>
+      <h1>SecureText</h1>
+      <p>Web-Based Text Encryption &amp; Decryption Tool</p>
+    </section>
+
+    <section class="card">
+      <label for="inputText">Plain Text / Ciphertext</label>
+      <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+
+      <div class="grid">
+        <div>
+          <label for="algorithm">Algorithm</label>
+          <select id="algorithm">
+            <option value="">-- Select an algorithm --</option>
+            <option value="caesar">Caesar Cipher</option>
+            <option value="vigenere">Vigenère Cipher</option>
+            <option value="autokey">Vigenère Autokey System</option>
+            <option value="vernam">Vernam Cipher</option>
+            <option value="otp">One-Time Pad</option>
+            <option value="base64">Base64</option>
+            <option value="aes">AES-256-GCM</option>
+            <option value="sha256">SHA-256 Hash</option>
+          </select>
+        </div>
+
+        <div id="shiftBox" class="hidden">
+          <label for="shift">Caesar Shift (0–25)</label>
+          <input id="shift" type="number" min="0" max="25" value="3">
+        </div>
+
+        <div id="keyBox" class="hidden">
+          <label for="key" id="keyLabel">Key / Keyword</label>
+          <input id="key" type="text" autocomplete="off" placeholder="Enter alphabetic key">
+          <small id="keyHint"></small>
+        </div>
+
+        <div id="passwordBox" class="hidden">
+          <label for="password">AES Password</label>
+          <input id="password" type="password" placeholder="Enter a password">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="encryptBtn" class="primary">Encrypt / Hash</button>
+        <button id="decryptBtn" class="secondary">Decrypt</button>
+        <button id="copyBtn" class="outline">Copy Result</button>
+        <button id="clearBtn" class="ghost">Clear</button>
+      </div>
+
+      <div id="message" class="message hidden"></div>
+
+      <label for="outputText">Result</label>
+      <textarea id="outputText" readonly placeholder="Your result will appear here..."></textarea>
+    </section>
+
+    <section class="info">
+      <div class="info-card">
+        <h3>Vigenère</h3>
+        <p>Repeating-key polyalphabetic substitution using C = (P + K) mod 26.</p>
+      </div>
+      <div class="info-card">
+        <h3>Autokey</h3>
+        <p>Starts with a keyword and extends the running key with plaintext characters.</p>
+      </div>
+      <div class="info-card">
+        <h3>Vernam</h3>
+        <p>Uses a key the same length as the message and applies the lecture's XOR method.</p>
+      </div>
+      <div class="info-card">
+        <h3>One-Time Pad</h3>
+        <p>Uses a same-length key once; the lecture example uses addition modulo 26.</p>
+      </div>
+    </section>
+
+    <section class="info secondary-info">
+      <div class="info-card">
+        <h3>Caesar Cipher</h3>
+        <p>Substitution cipher that shifts alphabetic characters by a selected amount.</p>
+      </div>
+      <div class="info-card">
+        <h3>Base64</h3>
+        <p>Encodes text into Base64 representation. It is encoding, not secure encryption.</p>
+      </div>
+      <div class="info-card">
+        <h3>AES-256-GCM</h3>
+        <p>Modern authenticated symmetric encryption using the browser Web Crypto API.</p>
+      </div>
+      <div class="info-card">
+        <h3>SHA-256</h3>
+        <p>One-way cryptographic hash included as an optional bonus feature.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>SecureText</span> • Built with HTML, CSS &amp; JavaScript • No external libraries required
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

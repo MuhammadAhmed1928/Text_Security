@@ -1,0 +1,19 @@
+Manual test cases:
+1. Empty input -> validation appears.
+2. No algorithm -> validation appears.
+3. Caesar HELLO with shift 3 -> KHOOR.
+4. Vigenère "MAKE IT HAPPEN NOW" with key PASWD -> "BACA LI HSLSTN FKZ".
+5. Vigenère decrypt "BACA LI HSLSTN FKZ" with PASWD -> "MAKE IT HAPPEN NOW".
+6. Vigenère Autokey HELLO with key N -> ULPWZ.
+7. Vigenère Autokey decrypt ULPWZ with key N -> HELLO.
+8. Vernam OAK with key SON -> COH.
+9. Vernam RAMSWARUPK with key RANCHOBABA -> AABQROQUOK.
+10. Vernam key length mismatch -> validation/error appears.
+11. One-Time Pad HELLO with key MONEY -> TSYPM.
+12. One-Time Pad decrypt TSYPM with MONEY -> HELLO.
+13. One-Time Pad SAVE with key LIFE -> DIAI.
+14. Base64 Hello -> SGVsbG8=.
+15. AES encrypt/decrypt with same password -> original text restored.
+16. AES with wrong password -> decryption fails safely.
+17. SHA-256 Hello -> 64-character hexadecimal hash.
+18. Copy Result -> result copied.
